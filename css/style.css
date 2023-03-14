@@ -24,11 +24,16 @@ Default: 1
 --- 05 SHADOWS ---
 
 --- 06 BORDER RADIUS ---
-
+Default: 9px;
 --- 07 WHITE SPACE ---
     SPACING SYSTEM (px)
     2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 
+
+*/
+
+/*
+ Reusable Classes
 
 */
 
@@ -49,24 +54,68 @@ body {
   color: #444;
 }
 
+/* ******************
+/* GENERAL NAVIGATION
+****************** */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+  height: 9.6rem;
+  padding: 0 4.8rem;
+}
+
+.logo {
+  height: 2.2rem;
+}
+
+.main-nav-list {
+  display: flex;
+  list-style: none;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 500;
+  transition: all 0.5s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #e67e22;
+}
+
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  color: #f9f5f5;
+  border-radius: 9px;
+  background-color: #e67e22;
+  padding: 1.2rem 2.4rem;
+}
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  font-size: 1.8rem;
+  background-color: #cf711f;
+}
+
 .section-hero {
   background-color: #fdf2e9;
-  padding: 9.6rem 0;
+  padding: 4.8rem 0;
 }
 
 .hero {
   max-width: 130rem;
   margin: 0 auto;
+  padding: 0 3.2rem;
   display: grid;
   gap: 9.6rem;
   grid-template-columns: 1fr 1fr;
-}
-
-.heading-primary {
-  font-size: 5.2rem;
-  line-height: 1.05;
-  margin-bottom: 2rem;
-  letter-spacing: -0.5px;
 }
 
 .hero-description {
@@ -74,44 +123,6 @@ body {
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 4.8rem;
-}
-
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  text-decoration: none;
-  font-size: 2rem;
-  font-weight: 600;
-  padding: 1.6rem 3.2rem;
-  border-radius: 9px;
-  transition: background-color 0.2s;
-}
-
-.btn-full:link,
-.btn-full:visited {
-  background-color: #e67e22;
-  color: #fff;
-}
-
-.btn-full:hover,
-.btn-full:active {
-  background-color: #cf711f;
-}
-
-.btn-outline:link,
-.btn-outline:visited {
-  background-color: #fff;
-  color: #555;
-}
-
-.btn-outline:hover,
-.btn-outline:active {
-  background-color: #fdf2e9;
-  box-shadow: inset 0 0 0 0.2rem #fff;
-}
-
-.btn-margin-sm {
-  margin-right: 1.6rem !important;
 }
 
 .delivered-meals {
@@ -130,6 +141,7 @@ body {
   width: 4.8rem;
   border-radius: 50%;
   margin-right: -1.6rem;
+  border: 3px solid #fff;
 }
 
 .delivered-imgs img:last-child {
@@ -141,6 +153,70 @@ body {
   font-size: 1.8rem;
 }
 
+.delivered-text span {
+  font-weight: 600;
+  color: #cf711f;
+}
 .hero-img {
   width: 100%;
+}
+
+/* ******************
+/* SECTION
+****************** */
+
+.section-how {
+  background-color: #fff;
+  padding: 9.6rem 0;
+}
+
+.step-img-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-img-box::before,
+.step-img-box::after {
+  content: "";
+  display: block;
+
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* z-index: -1; */
+}
+.step-img-box::before {
+  width: 60%;
+  padding-bottom: 60%;
+  background-color: #fdf2e9;
+
+  /* z-index: -1; */
+}
+
+.step-img-box::after {
+  width: 45%;
+  padding-bottom: 45%;
+  background-color: #fae5d3;
+}
+.step-img {
+  width: 35%;
+  z-index: 10;
+}
+
+.step-number {
+  font-size: 9.8rem;
+  font-weight: 600;
+  color: #ddd;
+  margin-bottom: 1.2rem;
+}
+
+.step-description {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
 }
